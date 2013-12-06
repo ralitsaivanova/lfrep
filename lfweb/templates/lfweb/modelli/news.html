@@ -1,0 +1,80 @@
+{% extends "modelli/base.html"%}
+
+{% load staticfiles %}
+
+
+{% block mediajq %}
+<link media="all" type="text/css" href="{% static 'css/magnific-popup.css' %}"  rel="stylesheet"><!--GALLERY-->
+<script src="{% static 'js/jquery-1.10.2.min.js' %}" type="text/javascript"></script><!--GALLERY-->
+{% endblock mediajq %}        
+
+
+{% block bodyclass %} class="news" {% endblock bodyclass %}
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>Titolo principale</h1>
+    
+        {% block menu %} 
+            {% include "modelli/menu.html" %}       
+        {% endblock menu %}  
+    
+    <div class="page_content">
+    
+        <article>
+        <header>
+            <hgroup>
+                <h3>21/12/2013</h3>
+                <h2>Secondo titoletto</h2>
+            </hgroup>
+        </header>
+        <div class="tex">
+        <p>Lorem ipsum ad qui amet dolore, <a href="#">vitae</a> cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior.</p>
+        <p>Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam. Et diam wisi tollit mel, te has atqui veritus. Falli volumus ullamcorper id vis, fugit debet ei pri. Mea esse saperet oporteat cu, sumo interesset an cum. Facer expetenda ius te, sint mundi aperiri no est, mollis salutandi quo ne. No dicta errem sed. Mea ei detraxit patrioque, sumo eirmod ea vix. Et dicit omittantur eam, et vix modo eius vidit.</p>
+        <p>Vis et pertinacia abhorreant constituam, eum at quod vero. Ferri consectetuer sed no, ex vix nonumy posidonium quaerendum. Eum in nostro omnesque philosophia, sit veniam recteque et. Et sit facer honestatis, sonet propriae officiis ne vel, est atqui verear eruditi eu. Ut duo augue deserunt mnesarchum, an per option dignissim, cu cum convenire consulatu deterruisset. Cu vel debet ludus, docendi nominati philosophia ex his.</p> 
+        </div>
+        <img src="{% static 'img/T-imgtex.jpg' %}" width="587" height="280" alt="img">
+        
+        <a href="#" class="open_gallery">gallery &gt;</a>
+        
+        </article>
+        
+        
+        <article>
+        <header>
+            <hgroup>
+                <h3>21/12/2013</h3>
+                <h2><a href="#">Secondo titoletto</a></h2><!--tag <a> in caso porti a dettaglio (setssa page con 1 sola news)-->
+            </hgroup>
+        </header>
+        <div class="tex">
+        <p>Lorem ipsum ad qui amet dolore, <a href="#">vitae</a> cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior.</p>
+        <p>Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam. Et diam wisi tollit mel, te has atqui veritus. Falli volumus ullamcorper id vis, fugit debet ei pri. Mea esse saperet oporteat cu, sumo interesset an cum. Facer expetenda ius te, sint mundi aperiri no est, mollis salutandi quo ne. No dicta errem sed. Mea ei detraxit patrioque, sumo eirmod ea vix. Et dicit omittantur eam, et vix modo eius vidit.</p>
+        <p>Vis et pertinacia abhorreant constituam, eum at quod vero. Ferri consectetuer sed no, ex vix nonumy posidonium quaerendum. Eum in nostro omnesque philosophia, sit veniam recteque et. Et sit facer honestatis, sonet propriae officiis ne vel, est atqui verear eruditi eu. Ut duo augue deserunt mnesarchum, an per option dignissim, cu cum convenire consulatu deterruisset. Cu vel debet ludus, docendi nominati philosophia ex his.</p> 
+        </div>
+        
+		<div class="video">
+        	<div class="videoWrapper">
+                <iframe width="538" height="327" src="//www.youtube.com/embed/n_dZNLr2cME" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div> 
+        
+        </article>
+        
+        <div class="pagen">
+        	<a href="#" class="prev off"><strong>&lt;</strong> Prev</a><!--add class "off" per quando è a fine corsa-->
+        	<a href="#" class="next">Next <strong>&gt;</strong></a>
+        </div>
+        
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}
+
+
+{% block media %}
+<script src="{% static 'js/magnific-popup.js' %}" type="text/javascript"></script><!--GALLERY-->
+<script src="{% static 'js/gallery.js' %}" type="text/javascript"></script><!--GALLERY-->
+{% endblock media %}

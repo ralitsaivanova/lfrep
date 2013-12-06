@@ -1,0 +1,43 @@
+{% extends "modelli/base.html"%}
+
+{% load staticfiles %}
+
+ {% block bodyclass %} class="filiera" {% endblock bodyclass %}
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>Titolo principale</h1>
+    
+        {% block menu %} 
+            {% include "modelli/menu.html" %}       
+        {% endblock menu %}  
+
+    
+    <div class="page_content">
+    
+        <article>
+        <img src="{% static 'lfweb/img/T-imgtex.jpg' %}" width="587" height="280" alt="img">
+        <div class="tex">
+        <p>Lorem ipsum ad qui amet dolore, <a href="#">vitae</a> cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior.</p>
+        <p>Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam. Et diam wisi tollit mel, te has atqui veritus. Falli volumus ullamcorper id vis, fugit debet ei pri. Mea esse saperet oporteat cu, sumo interesset an cum. Facer expetenda ius te, sint mundi aperiri no est, mollis salutandi quo ne. No dicta errem sed. Mea ei detraxit patrioque, sumo eirmod ea vix. Et dicit omittantur eam, et vix modo eius vidit.</p>
+        <p>Vis et pertinacia abhorreant constituam, eum at quod vero. Ferri consectetuer sed no, ex vix nonumy posidonium quaerendum. Eum in nostro omnesque philosophia, sit veniam recteque et. Et sit facer honestatis, sonet propriae officiis ne vel, est atqui verear eruditi eu. Ut duo augue deserunt mnesarchum, an per option dignissim, cu cum convenire consulatu deterruisset. Cu vel debet ludus, docendi nominati philosophia ex his.</p> 
+        </div>
+        </article>
+        
+        <article>
+        <h1>Secondo Titolo</h1>
+        <img src="{% static 'lfweb/img/T-imgtex.jpg' %}" width="587" height="280" alt="img">
+        <h2>Secondo titoletto</h2>
+        <div class="tex">
+        <p>Lorem ipsum ad qui amet dolore, <a href="#">vitae</a> cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior.</p>
+        <p>Sea te choro perfecto, per eu meis nonumy percipit. Ut mea sint constituam, cu pro impedit constituam. Et diam wisi tollit mel, te has atqui veritus. Falli volumus ullamcorper id vis, fugit debet ei pri. Mea esse saperet oporteat cu, sumo interesset an cum. Facer expetenda ius te, sint mundi aperiri no est, mollis salutandi quo ne. No dicta errem sed. Mea ei detraxit patrioque, sumo eirmod ea vix. Et dicit omittantur eam, et vix modo eius vidit.</p>
+        <p>Vis et pertinacia abhorreant constituam, eum at quod vero. Ferri consectetuer sed no, ex vix nonumy posidonium quaerendum. Eum in nostro omnesque philosophia, sit veniam recteque et. Et sit facer honestatis, sonet propriae officiis ne vel, est atqui verear eruditi eu. Ut duo augue deserunt mnesarchum, an per option dignissim, cu cum convenire consulatu deterruisset. Cu vel debet ludus, docendi nominati philosophia ex his.</p> 
+        </div>
+        </article>
+        
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}
