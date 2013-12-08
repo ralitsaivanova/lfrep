@@ -16,6 +16,7 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rosetta/', include('rosetta.urls')),
-    url(r'^', include('cms.urls')), 
+    url(r'^', include('cms.urls')),
+    (r'^tinymce/', include('tinymce.urls')), 
 
 )

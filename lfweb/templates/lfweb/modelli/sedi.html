@@ -1,6 +1,6 @@
-{% extends "modelli/base.html"%}
+{% extends "lfweb/modelli/base.html"%}
 
-{% load staticfiles %}
+{% load staticfiles cms_tags menu_tags %}
 
  {% block bodyclass %} class="sedi" {% endblock bodyclass %}
 
@@ -16,18 +16,35 @@
     <h1>Sedi</h1>
     
         {% block menu %} 
-            {% include "modelli/menu.html" %}       
+            {% include "lfweb/modelli/menu.html" %}       
         {% endblock menu %}  
     
     <div class="page_content">
             
         <article>
         <div class="tex">
-            <!--Map-->
+        <!--Map-->
             <div class="mapWrapper">
-				<div id="map1" style=" height:100%; width:100%;"></div>
+                {% placeholder "map_1" %}
             </div>
             <!--/Map-->
+    
+                    
+        {% placeholder "title_1" %}
+
+        <p class="bloc1">
+            {% placeholder "address_1" %}
+        </p>
+        <p class="bloc2">
+            {% placeholder "sub_address_1" %}
+        </p>
+
+        <!--Map-->
+            <div class="mapWrapper">
+                <div id="map1" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
+
         <h2>Hong Kong Main office</h2>
             <p class="bloc1">
                 Tollegno 1900 USA Inc.<br />
