@@ -13,7 +13,7 @@ class CollectionTranslationOptions(TranslationOptions):
 translator.register(Collection, CollectionTranslationOptions)
 
 class YarnTranslationOptions(TranslationOptions):
-    fields = ('name','title', 'abstract','text')
+    fields = ('name','title',)
 
 translator.register(Yarn, YarnTranslationOptions)
 

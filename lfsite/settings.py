@@ -140,7 +140,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'cms.middleware.multilingual.MultilingualURLMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
 )
 
@@ -177,11 +179,19 @@ THIRD_PARTY_APPS = (
     'south',
     'modeltranslation',
     'cms', 
+    'cms.plugins.text',
+    'cms.plugins.file',
+    'cms.plugins.link',
+    'cms.plugins.snippet',
+    'cms.plugins.googlemap',
+    'cms.plugins.picture',
+    #'cms.plugins.flash',
     'mptt', 
     'menus', 
     'sekizai',
     'django.contrib.messages',
-    'rosetta'
+    'rosetta',
+    'tinymce',
 )
 
 # Apps specific for this project go here.
@@ -192,7 +202,20 @@ LOCAL_APPS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+CMS_PLACEHOLDER_CONF = {
+    'content': {
+        'plugins': ['TextPlugin', 'PicturePlugin'],
+        'text_only_plugins': ['LinkPlugin'],
+        'extra_context': {"width":640},
+        'name':gettext("Content"),
+    },
+}
 
+CMS_MEDIA_PATH = "/cms"
+CMS_MEDIA_ROOT = MEDIA_URL + CMS_MEDIA_PATH
+CMS_PAGE_MEDIA_PATH = 'cms_page_media/'
+
+GOOGLE_MAPS_API_KEY = "AIzaSyAmEGymkJjq0UZ-5HJooK_rTlSHjj3nhCA"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
