@@ -21,6 +21,8 @@
     
     <div class="page_content">
             
+        <article>
+<<<<<<< HEAD
             <div class="tex">
             <!--Map-->
                 <div class="mapWrapper">
@@ -56,6 +58,7 @@
     				Ms. Angela Liu angela.liu@lorafesta.com.cn
                 </p> 
             </div>
+=======
         <div class="tex">
         <!--Map-->
             <div class="mapWrapper">
@@ -71,6 +74,7 @@
                 {% placeholder "sub_address_1" %}
             </div> 
         </div>
+>>>>>>> f46f571fdc59cc8d20672fb3ff031ec29b2dd68c
         </article>
         
         <article>

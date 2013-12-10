@@ -1,6 +1,6 @@
 {% extends "lfweb/modelli/base.html"%}
 
-{% load staticfiles %}
+{% load staticfiles cms_tags menu_tags %}
 
  {% block bodyclass %} class="collezioni" {% endblock bodyclass %}
 
@@ -12,7 +12,7 @@
     <h1>Titolo principale</h1>
     
         {% block menu %} 
-            {% include "modelli/menu.html" %}       
+            {% include "lfweb/modelli/menu.html" %}       
         {% endblock menu %}  
     
     <div class="page_content">
