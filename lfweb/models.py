@@ -27,8 +27,8 @@ class Image(models.Model):
 
 class Collection(models.Model):
     parent = models.ForeignKey("self", null = True,verbose_name = _('collection'))
-    name = HTMLField(max_length=130,verbose_name = _('name'),null=True)
-    title = HTMLField(max_length=130,verbose_name = _('title'),null=True)
+    name = models.CharField(max_length=130,verbose_name = _('name'),null=True)
+    title = models.CharField(max_length=130,verbose_name = _('title'),null=True)
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)
     abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True)
     description  = HTMLField(verbose_name = _('description'),null=True)
@@ -58,15 +58,16 @@ class Yarn(models.Model):
         
 
 class News(models.Model):
-    title = HTMLField(max_length=130,verbose_name = _('title'),null=True)
-    abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True)
-    slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)	
-    date = models.DateField(verbose_name = _('date'),null=True)
-    text = HTMLField(verbose_name = _('text'),null=True) 
+    title = HTMLField(max_length=130,verbose_name = _('title'),null=True,blank=True)
+    abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True,blank=True)
+    slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True,blank=True)	
+    date = models.DateField(verbose_name = _('date'),null=True,blank=True)
+    text = HTMLField(verbose_name = _('text'),null=True,blank=True)
+    img = models.ImageField(upload_to="gallery",verbose_name = _('img'),null=True,blank=True)  
     gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
-    video_url = models.CharField(max_length=130,verbose_name = _('video_url'),null=True)
+    video_url = models.CharField(max_length=130,verbose_name = _('video_url'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
-    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True)
+    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
 
     class Meta:
         verbose_name = _('news')

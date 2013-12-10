@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from models import Collection, Yarn, News
 
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', 'abstract','text')
+    fields = ('title', 'abstract','text','slug')
 
 translator.register(News, NewsTranslationOptions)
 
