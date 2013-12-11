@@ -14,7 +14,7 @@ class Gallery(models.Model):
 
 class Image(models.Model):
     parent = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'))
-    img = models.ImageField(upload_to="gallery",verbose_name = _('img'),)
+    img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),)
     abstract  = models.TextField(max_length=255,verbose_name = _('abstract'),)
     pub = models.BooleanField()
     pub_order = models.SmallIntegerField()
@@ -47,7 +47,7 @@ class Yarn(models.Model):
     name = HTMLField(max_length=130,verbose_name = _('name'))
     title = HTMLField(max_length=130,verbose_name = _('title'),null=True,blank=True)
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)
-    img = models.ImageField(upload_to="gallery",verbose_name = _('img'),null=True,blank=True)
+    img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
     pub_order = models.SmallIntegerField(verbose_name = _('media'),null=True,blank=True)
 
@@ -58,12 +58,12 @@ class Yarn(models.Model):
         
 
 class News(models.Model):
-    title = HTMLField(max_length=130,verbose_name = _('title'),null=True,blank=True)
-    abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True,blank=True)
+    title = models.CharField(max_length=130,verbose_name = _('title'),null=True,blank=True)
+    abstract  = models.CharField(max_length=255,verbose_name = _('abstract'),null=True,blank=True)
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True,blank=True)	
     date = models.DateField(verbose_name = _('date'),null=True,blank=True)
     text = HTMLField(verbose_name = _('text'),null=True,blank=True)
-    img = models.ImageField(upload_to="gallery",verbose_name = _('img'),null=True,blank=True)  
+    img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)  
     gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
     video_url = models.CharField(max_length=130,verbose_name = _('video_url'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
