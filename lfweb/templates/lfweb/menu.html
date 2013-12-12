@@ -1,0 +1,20 @@
+{% load menu_tags %}
+
+<div class="menu-tot">
+    <nav>
+        
+    {% for child in children %}
+        <ul>
+            <li class="macro">{{ child.get_menu_title}}</li>
+            {% if child.children %}
+                 {% for item in child.children %}
+                    <li><a href="{{item.get_absolute_url}}">{{item.get_menu_title}}</a></li>
+                 {% endfor %}
+            {% endif %}
+           
+           
+        </ul>
+        {% endfor %}
+       
+    </nav>
+</div>

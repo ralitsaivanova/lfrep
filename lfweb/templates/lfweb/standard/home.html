@@ -1,0 +1,90 @@
+{% extends "lfweb/modelli/base.html"%}
+
+{% load staticfiles cms_tags menu_tags %}
+
+
+{% block mediajq %}
+<script src="{% static 'lfweb/js/jquery-1.10.2.min.js' %}" type="text/javascript"></script><!-- (potrebbe servire anche solo in home)-->
+{% endblock mediajq %}        
+
+
+ {% block bodyclass %} class="home" {% endblock bodyclass %}
+ 
+     {% block breadcrums %} 
+	{% endblock breadcrums %}
+
+
+
+{% block content %}
+
+    <!--startsVIEW-->
+
+    	<section>
+		<div class="video">
+        	<div class="videoWrapper">
+                <iframe width="538" height="327" src="//www.youtube.com/embed/n_dZNLr2cME" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div> 
+        </section>   
+    
+    	<div class="menu_cont">
+        	<section class="sezione" ref="one">
+            	<img src="{% static 'lfweb/img/bg-azienda.jpg' %}" width="480" height="465" alt="azienda" class="bg one">
+                <h1 class="macrotit one">Azienda</h1>
+                <nav class="menu one">
+                	<ul>
+                    	<li><a href="#">La Storia &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    </ul>
+                </nav>
+            </section>
+        	<section class="sezione" ref="two">
+            	<img src="{% static 'lfweb/img/bg-cashmere.jpg' %}" width="480" height="465" alt="cashmere" class="bg two">
+                <h1 class="macrotit two">Cashmere</h1>
+                <nav class="menu two">
+                	<ul>
+                    	<li><a href="#">La Storia &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    </ul>
+                </nav>
+            </section>
+        	<section class="sezione" ref="three">
+            	<img src="{% static 'lfweb/img/bg-qualita.jpg' %}" width="480" height="465" alt="qualità" class="bg three">
+                <h1 class="macrotit three">Qualit&aacute;</h1>
+                <nav class="menu three">
+                	<ul>
+                    	<li><a href="#">La Storia &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    </ul>
+                </nav>
+            </section>
+        	<section class="sezione" ref="four">
+            	<img src="{% static 'lfweb/img/bg-contatti.jpg' %}" width="480" height="465" alt="contatti" class="bg four">
+                <h1 class="macrotit four">Contatti</h1>
+                <nav class="menu four">
+                	<ul>
+                    	<li><a href="#">La Storia &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    	<li><a href="#">Voce Numero n &gt;</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    
+    
+    
+    
+    
+    <!--endsVIEW-->
+{% endblock content %}
+
+{% block media %}
+<script src="{% static 'lfweb/js/home.js' %}" type="text/javascript"></script><!--realtivo alla page (potrebbe servire anche solo in home)-->
+{% endblock media %}

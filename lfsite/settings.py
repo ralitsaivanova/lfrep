@@ -14,11 +14,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'lfwebdb',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'loradev01',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -36,7 +36,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'it'
 
 gettext = lambda s: s
 LANGUAGES = (
@@ -122,13 +122,13 @@ TEMPLATE_DIRS = (
 
 CMS_TEMPLATES = (
     ('lfweb/modelli/base.html', gettext('base')),
-    ('lfweb/modelli/home.html', gettext('home')),
-    ('lfweb/modelli/interna.html', gettext('interna')),
-    ('lfweb/modelli/interna2.html', gettext('interna2')),
+    ('lfweb/standard/home.html', gettext('home')),
+    ('lfweb/standard/interna.html', gettext('interna')),
+    ('lfweb/standard/interna2.html', gettext('interna2')),
     ('lfweb/modelli/news.html', gettext('news')),
     ('lfweb/modelli/collezioni.html', gettext('collezioni')),
     ('lfweb/modelli/collezioni_det.html', gettext('collezioni_det')),
-    ('lfweb/modelli/sedi.html', gettext('sedi')),
+    ('lfweb/standard/sedi.html', gettext('sedi')),
     ('lfweb/404.html', gettext('404')),
 )
 
