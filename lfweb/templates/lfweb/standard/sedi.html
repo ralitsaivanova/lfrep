@@ -1,4 +1,4 @@
-{% extends "lfweb/modelli/base.html"%}
+{% extends "lfweb/base.html"%}
 
 {% load staticfiles cms_tags menu_tags %}
 
@@ -23,10 +23,10 @@
             
             <div class="tex">
             <!--Map-->
-                <div class="mapWrapper">
-                    {% placeholder "map_1" %}
-                </div>
-                <!--/Map-->
+            <div class="mapWrapper">
+                <div id="map1" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
         
                         
             {% placeholder "title_1" %}
@@ -59,7 +59,7 @@
         <div class="tex">
         <!--Map-->
             <div class="mapWrapper">
-                <div id="map1" style=" height:100%; width:100%;"></div>
+                <div id="map2" style=" height:100%; width:100%;"></div>
             </div>
             <!--/Map-->
 
@@ -73,25 +73,6 @@
         </div>
         </article>
         
-        <article>
-        <div class="tex">
-            <!--Map-->
-            <div class="mapWrapper">
-				 {% placeholder "map_2" %}
-            </div>
-            <!--/Map-->
-        <h2>Shanghai office</h2>
-            <p class="bloc1">
-                               aaaaaaaaaaaaa
-
-               {% placeholder "address_2" %}
-            </p> 
-            <p class="bloc2">
-                Mr. Giacomo Paolillo giacomo.paolillo@lorafesta.com.cn<br />
-				Ms. Angela Liu angela.liu@lorafesta.com.cn
-            </p> 
-        </div>
-        </article>
         <article>
         <div class="tex">
             <!--Map-->

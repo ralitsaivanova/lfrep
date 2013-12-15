@@ -26,12 +26,12 @@ class Image(models.Model):
 
 
 class Collection(models.Model):
-    parent = models.ForeignKey("self", null = True,verbose_name = _('collection'))
-    name = models.CharField(max_length=130,verbose_name = _('name'),null=True)
-    title = models.CharField(max_length=130,verbose_name = _('title'),null=True)
-    slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)
-    abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True)
-    description  = HTMLField(verbose_name = _('description'),null=True)
+    parent = models.ForeignKey("self", null = True,verbose_name = _('collection'),blank=True)
+    name = models.CharField(max_length=130,verbose_name = _('name'),null=True,blank=True)
+    title = models.CharField(max_length=130,verbose_name = _('title'),null=True,blank=True)
+    slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True,blank=True)
+    abstract  = HTMLField(max_length=255,verbose_name = _('abstract'),null=True,blank=True)
+    description  = HTMLField(verbose_name = _('description'),null=True,blank=True)
     gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
     video_url = models.CharField(max_length=130,verbose_name = _('video_url'),blank=True,null=True)
     pub = models.BooleanField(verbose_name = _('pub'))

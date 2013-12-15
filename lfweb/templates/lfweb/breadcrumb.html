@@ -1,0 +1,15 @@
+<div id="breadcrums">
+	<div class="path">
+		<a href="/">Home</a> >
+{% for ance in ancestors %}
+
+ 	{% if not forloop.last %}
+ 		<a href="{{ ance.get_absolute_url }}">{{ ance.get_menu_title }}</a> >
+ 	{% else %}
+ 		{{ ance.get_menu_title }}
+ 	{% endif %}
+
+{% endfor %}
+	</div>
+</div>
+

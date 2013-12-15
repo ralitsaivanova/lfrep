@@ -125,7 +125,6 @@ CMS_TEMPLATES = (
     ('lfweb/standard/home.html', gettext('home')),
     ('lfweb/standard/interna.html', gettext('interna')),
     ('lfweb/standard/interna2.html', gettext('interna2')),
-    ('lfweb/modelli/news.html', gettext('news')),
     ('lfweb/modelli/collezioni.html', gettext('collezioni')),
     ('lfweb/modelli/collezioni_det.html', gettext('collezioni_det')),
     ('lfweb/standard/sedi.html', gettext('sedi')),

@@ -48,8 +48,9 @@
     </header>
     
     {% block breadcrums %} 
-   	<div id="breadcrums"><div class="path"><a href="#">Home &gt;</a> <a href="#">Azienda &gt;</a> <a href="#">Cashmere &gt;</a> Collections</div></div>
+        {% show_breadcrumb "lfweb/breadcrumb.html"  %}
 	{% endblock breadcrums %}
+    
 	<div id="wrapper">
     <!--startsVIEW-->
     

@@ -1,4 +1,4 @@
-{% extends "lfweb/modelli/base.html"%}
+{% extends "lfweb/base.html"%}
 
 {% load staticfiles cms_tags menu_tags %}
 
@@ -27,59 +27,7 @@
         </div> 
         </section>   
     
-    	<div class="menu_cont">
-        	<section class="sezione" ref="one">
-            	<img src="{% static 'lfweb/img/bg-azienda.jpg' %}" width="480" height="465" alt="azienda" class="bg one">
-                <h1 class="macrotit one">Azienda</h1>
-                <nav class="menu one">
-                	<ul>
-                    	<li><a href="#">La Storia &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    </ul>
-                </nav>
-            </section>
-        	<section class="sezione" ref="two">
-            	<img src="{% static 'lfweb/img/bg-cashmere.jpg' %}" width="480" height="465" alt="cashmere" class="bg two">
-                <h1 class="macrotit two">Cashmere</h1>
-                <nav class="menu two">
-                	<ul>
-                    	<li><a href="#">La Storia &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    </ul>
-                </nav>
-            </section>
-        	<section class="sezione" ref="three">
-            	<img src="{% static 'lfweb/img/bg-qualita.jpg' %}" width="480" height="465" alt="qualità" class="bg three">
-                <h1 class="macrotit three">Qualit&aacute;</h1>
-                <nav class="menu three">
-                	<ul>
-                    	<li><a href="#">La Storia &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    </ul>
-                </nav>
-            </section>
-        	<section class="sezione" ref="four">
-            	<img src="{% static 'lfweb/img/bg-contatti.jpg' %}" width="480" height="465" alt="contatti" class="bg four">
-                <h1 class="macrotit four">Contatti</h1>
-                <nav class="menu four">
-                	<ul>
-                    	<li><a href="#">La Storia &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    	<li><a href="#">Voce Numero n &gt;</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
-    
-    
-    
+    	{% show_menu 0 100 100 100 "lfweb/menu_home.html" %}
     
     
     <!--endsVIEW-->
