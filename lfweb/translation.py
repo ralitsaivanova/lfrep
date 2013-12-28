@@ -8,7 +8,7 @@ translator.register(News, NewsTranslationOptions)
 
 
 class CollectionTranslationOptions(TranslationOptions):
-    fields = ('name','title', 'abstract')
+    fields = ('name','title', 'abstract','description','slug')
 
 translator.register(Collection, CollectionTranslationOptions)
 

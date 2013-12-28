@@ -1,0 +1,43 @@
+{% extends "lfweb/base.html"%}
+
+{% load staticfiles cms_tags menu_tags %}
+
+ {% block bodyclass %} class="collezioni" {% endblock bodyclass %}
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>Titolo principale</h1>
+    
+        {% block menu %} 
+            {% show_menu 0 100 100 100 "lfweb/menu.html" %}       
+        {% endblock menu %}  
+    
+    <div class="page_content">
+    
+        {% for collection in collections %}   
+        <article>
+            <img src="{{collection.main.img.url}}" width="587" height="280" alt="img">
+            <h2>{{collection.main.name}}</h2>
+            <div class="tex">
+                {{collection.main.abstract|safe}}
+
+                	
+                <div class="sublink">
+                    {% for sub in collection.sub %}
+                	<a href="{% page_url request.current_page %}{{sub.name}}">{{sub.name}}</a> <br/>
+                    {% endfor %}
+                </div>
+            
+            </div>
+        </article>
+        {% endfor %} 
+
+
+       
+        
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}

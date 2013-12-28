@@ -24,6 +24,20 @@ DATABASES = {
     }
 }
 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'ralka_lorafesta',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': 'ralka',
+        'PASSWORD': 'IwyawDW3',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
+'''
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -186,6 +200,7 @@ THIRD_PARTY_APPS = (
     'cms.plugins.snippet',
     'cms.plugins.googlemap',
     'cms.plugins.picture',
+    
     #'cms.plugins.flash',
     'mptt', 
     'menus', 
@@ -202,14 +217,12 @@ LOCAL_APPS = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
-CMS_PLACEHOLDER_CONF = {
-    'content': {
-        'plugins': ['TextPlugin', 'PicturePlugin'],
-        'text_only_plugins': ['LinkPlugin'],
-        'extra_context': {"width":640},
-        'name':gettext("Content"),
-    },
+TINYMCE_DEFAULT_CONFIG = {
+'theme': "advanced",
+'theme_advanced_toolbar_location' : "top",
+'theme_advanced_buttons1': "bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo",
+'theme_advanced_buttons2': "",
+'theme_advanced_buttons3': "",
 }
 
 CMS_MEDIA_PATH = "/cms"

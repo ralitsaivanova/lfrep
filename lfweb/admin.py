@@ -9,14 +9,21 @@ class NewsAdmin(TranslationAdmin):
     
 admin.site.register(News, NewsAdmin)
 
+class YarnInline(admin.TabularInline):
+    model = Yarn
+
 class CollectionAdmin(TranslationAdmin):
-    pass
+	list_display = ('parent','name','title','abstract','description','pub','pub_order',)
+	prepopulated_fields = {'slug':('name',),}
+	#inlines = [YarnInline, ]
+        
+   
 
 admin.site.register(Collection, CollectionAdmin)
 
 class YarnAdmin(TranslationAdmin):
-    pass
-
+	list_display = ('name','title','pub','pub_order',)
+    
 admin.site.register(Yarn, YarnAdmin)
 
 class GalleryAdmin(admin.ModelAdmin):

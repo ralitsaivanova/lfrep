@@ -1,0 +1,82 @@
+{% extends "lfweb/modelli/base.html"%}
+
+{% load staticfiles cms_tags menu_tags %}
+
+ {% block bodyclass %} class="collezioni_det" {% endblock bodyclass %}
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>{{collection.name}}</h1>
+    
+        {% block menu %} 
+            {% show_menu 0 100 100 100 "lfweb/menu.html" %}    
+        {% endblock menu %}  
+    
+    <div class="page_content">
+        <article>
+        {% ifequal page 1 %}
+            <div class="tex">
+                {{collection.description|safe}}
+
+                <div class="pittogram">
+                    <img src="{{collection.img.url}}" width="236" height="31" alt="lavaggi washings" />
+                </div>
+          
+          </div>
+          
+          
+          <img src="{% static 'img/Debonaire.jpg' %}" width="694" height="405" alt="scheda tecnica">
+         {% endifequal %}   
+          <h2>STOCK SERVICE</h2>
+            
+            <div class="stock">
+                {% for yarn in yarns %} 
+
+                    {% if forloop.first %}
+                        <div class="col">
+                    {% endif %}
+
+
+                        <img src="{{yarn.img.url}}" width="339" height="210" alt="filato1" />
+                        <h2>{{yarn.name|safe}}</h2>
+
+                    {% if not forloop.last %}            
+                        {% if forloop.counter|divisibleby:"3" %}
+                            </div>
+                            <div class="col">
+                        {% endif %}
+                    {% endif %}    
+
+                    {% if forloop.last %}
+                        </div>
+                    {% endif %}
+                {% endfor %}   
+            </div>
+            
+        </article>
+
+
+        <div class="pagen">
+            {% if yarns.has_previous %}
+                <a href="?page={{ yarns.previous_page_number }}" class="prev"><strong>&lt;</strong> Prev</a>
+            {% endif %}
+
+            {% if not yarns.has_previous %}
+                <a href="#" class="prev off"><strong>&lt;</strong> Prev</a>
+            {% endif %}
+
+            {% if yarns.has_next %}
+                <a href="?page={{ yarns.next_page_number }}" class="next">Next <strong>&gt;</strong></a>
+            {% endif %}
+
+            {% if not yarns.has_next %}
+                <a href="#" class="next off">Next <strong>&gt;</strong></a>
+            {% endif %}	
+        </div>
+        
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}

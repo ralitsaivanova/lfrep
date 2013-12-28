@@ -16,7 +16,7 @@
 {% block content %}
     <!--startsVIEW-->
     
-    <h1>News</h1>
+    <h1>News </h1>
     
         {% block menu %} 
              {% show_menu 0 100 100 100 "lfweb/menu.html" %}
@@ -53,19 +53,19 @@
         {% endfor %}
         <div class="pagen">
             {% if news.has_previous %}
-                <a href="?page={{ news.previous_page_number }}" class="prev ">previous</a>
+                <a href="?page={{ news.previous_page_number }}" class="prev "> <strong>&lt;</strong> previous</a>
             {% endif %}
 
             {% if not news.has_previous %}
-                <a href="#" class="prev off">previous</a>
+                <a href="#" class="prev off"><strong>&lt;</strong> previous</a>
             {% endif %}    
 
             {% if news.has_next %}
-                <a href="?page={{ news.next_page_number }}" class="next">next</a>
+                <a href="?page={{ news.next_page_number }}" class="next">next <strong>&gt;</strong></a>
             {% endif %} 
 
             {% if not news.has_next %}
-                <a href="#" class="next off">next</a>
+                <a href="#" class="next off">next <strong>&gt;</strong></a>
             {% endif %}   
 
         	
