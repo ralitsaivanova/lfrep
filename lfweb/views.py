@@ -39,7 +39,7 @@ def detail(request,slug):
 	collection = Collection.objects.filter(slug = slug)[0]
 	
 	yarn_list = Yarn.objects.filter(collection=collection,pub=True).order_by('pub_order')
-	paginator = Paginator(yarn_list, 12) 
+	paginator = Paginator(yarn_list, 6) 
 
 	page = request.GET.get('page')
 	try:

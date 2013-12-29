@@ -17,7 +17,7 @@ class Image(models.Model):
     img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),)
     abstract  = models.TextField(max_length=255,verbose_name = _('abstract'),)
     pub = models.BooleanField()
-    pub_order = models.SmallIntegerField()
+    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
 
     class Meta:
         verbose_name = _('images')
@@ -37,7 +37,7 @@ class Collection(models.Model):
     gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
     video_url = models.CharField(max_length=130,verbose_name = _('video_url'),blank=True,null=True)
     pub = models.BooleanField(verbose_name = _('pub'))
-    pub_order = models.SmallIntegerField()
+    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
 
     class Meta:
         verbose_name = _('collections')
@@ -54,7 +54,7 @@ class Yarn(models.Model):
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)
     img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
-    pub_order = models.SmallIntegerField(verbose_name = _('media'),null=True,blank=True)
+    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
 
     class Meta:
         verbose_name = _('yarns')

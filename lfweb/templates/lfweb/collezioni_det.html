@@ -1,4 +1,4 @@
-{% extends "lfweb/modelli/base.html"%}
+{% extends "lfweb/base.html"%}
 
 {% load staticfiles cms_tags menu_tags %}
 
@@ -28,7 +28,7 @@
           </div>
           
           
-          <img src="{% static 'img/Debonaire.jpg' %}" width="694" height="405" alt="scheda tecnica">
+          <img src="{{collection.pittogramma.url}}" width="694" height="405" alt="scheda tecnica">
          {% endifequal %}   
           <h2>STOCK SERVICE</h2>
             

@@ -35,8 +35,11 @@
             <div class="tex">
                     {{item.text|safe}}
             </div>
-            <img src="{{item.img.url}}" width="587" height="280" alt="img">
             
+            {% if item.img.url %}
+                <img src="{{item.img.url}}" width="587" height="280" alt="img">
+            {% endif %}
+
             {% if item.gallery %}
              <a href="#" class="open_gallery">gallery &gt;</a>
             {% endif %}

@@ -9,7 +9,7 @@
 {% block content %}
     <!--startsVIEW-->
     
-    <h1>Titolo principale</h1>
+    <h1>{{collections.0.main.name}}</h1>
     
         {% block menu %} 
             {% show_menu 0 100 100 100 "lfweb/menu.html" %}       
@@ -19,8 +19,11 @@
     
         {% for collection in collections %}   
         <article>
+            {% if not forloop.first %}
+                <h1>{{collection.main.name}}</h1>
+            {% endif %}
             <img src="{{collection.main.img.url}}" width="587" height="280" alt="img">
-            <h2>{{collection.main.name}}</h2>
+            <h2>{{collection.main.title}}</h2>
             <div class="tex">
                 {{collection.main.abstract|safe}}
 
@@ -34,10 +37,6 @@
             </div>
         </article>
         {% endfor %} 
-
-
-       
-        
     </div>
     <!--endsVIEW-->
 {% endblock content %}
