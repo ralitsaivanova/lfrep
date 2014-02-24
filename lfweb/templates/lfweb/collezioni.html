@@ -20,23 +20,27 @@
         {% for collection in collections %}   
         <article>
             {% if not forloop.first %}
-                <h1>{{collection.main.name}}</h1>
+                <h1>{{collection.main.name|safe}}</h1>
             {% endif %}
-            <img src="{{collection.main.img.url}}" width="587" height="280" alt="img">
-            <h2>{{collection.main.title}}</h2>
+            <img src="{{collection.main.img.url}}" width="{{collection.main.img.width}}" height="{{collection.main.img.height}}" alt="{{collection.main.name|safe}}" >
+            <h2>{{collection.main.title|safe}}</h2>
             <div class="tex">
                 {{collection.main.abstract|safe}}
 
                 	
                 <div class="sublink">
                     {% for sub in collection.sub %}
-                	<a href="{% page_url request.current_page %}{{sub.name}}">{{sub.name}}</a> <br/>
+                	<a href="{% page_url request.current_page %}{{sub.slug}}">{{sub.name|safe}}</a> <br/>
                     {% endfor %}
                 </div>
             
             </div>
         </article>
         {% endfor %} 
+
+
+       
+        
     </div>
     <!--endsVIEW-->
 {% endblock content %}

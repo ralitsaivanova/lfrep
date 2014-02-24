@@ -166,11 +166,6 @@ ROOT_URLCONF = 'lfsite.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'lfsite.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 
 DJANGO_APPS = (
     # Default Django apps:
@@ -208,11 +203,13 @@ THIRD_PARTY_APPS = (
     'django.contrib.messages',
     'rosetta',
     'tinymce',
+    'easy_thumbnails',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'lfweb',
+    'news',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -221,8 +218,10 @@ TINYMCE_DEFAULT_CONFIG = {
 'theme': "advanced",
 'theme_advanced_toolbar_location' : "top",
 'theme_advanced_buttons1': "bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo",
-'theme_advanced_buttons2': "",
+'theme_advanced_buttons2': "code,link",
 'theme_advanced_buttons3': "",
+ 'theme_advanced_resizing': True,
+    'element_format': "html",
 }
 
 CMS_MEDIA_PATH = "/cms"
@@ -259,3 +258,4 @@ LOGGING = {
         },
     }
 }
+

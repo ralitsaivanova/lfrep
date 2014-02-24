@@ -34,7 +34,7 @@ class Collection(models.Model):
     description  = HTMLField(verbose_name = _('description'),null=True,blank=True)
     img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)
     pittogramma = models.ImageField(upload_to="uploads/gallery",verbose_name = _('pittogramma'),null=True,blank=True)
-    gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
+#   gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
     video_url = models.CharField(max_length=130,verbose_name = _('video_url'),blank=True,null=True)
     pub = models.BooleanField(verbose_name = _('pub'))
     pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
@@ -47,10 +47,26 @@ class Collection(models.Model):
         return self.name
 
 
+
+class Tecnicalcard(models.Model):
+    collection = models.ForeignKey(Collection)
+    alttext = models.CharField(max_length=255,verbose_name = _('alttext'),null=True,blank=True)
+    img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)
+    pub = models.BooleanField(verbose_name = _('pub'))
+    pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
+
+    class Meta:
+        verbose_name = _('technical_card')
+        verbose_name_plural = _('technical_cards')
+
+    def __unicode__(self):  
+        return self.alttext        
+
+
 class Yarn(models.Model):
     collection = models.ForeignKey(Collection)
-    name = HTMLField(max_length=130,verbose_name = _('name'))
-    title = HTMLField(max_length=130,verbose_name = _('title'),null=True,blank=True)
+    name = models.CharField(max_length=130,verbose_name = _('name'))
+    title = models.CharField(max_length=130,verbose_name = _('title'),null=True,blank=True)
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True)
     img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
@@ -68,10 +84,11 @@ class News(models.Model):
     title = models.CharField(max_length=130,verbose_name = _('title'),null=True,blank=True)
     abstract  = models.CharField(max_length=255,verbose_name = _('abstract'),null=True,blank=True)
     slug = models.SlugField(max_length=50,verbose_name = _('slug'),null=True,blank=True)	
-    date = models.DateField(verbose_name = _('date'),null=True,blank=True)
+    date_from = models.DateField(verbose_name = _('date_from'),null=True,blank=True)
+    date_to = models.DateField(verbose_name = _('date_to'),null=True,blank=True)
     text = HTMLField(verbose_name = _('text'),null=True,blank=True)
     img = models.ImageField(upload_to="uploads/gallery",verbose_name = _('img'),null=True,blank=True)  
-    gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
+ #   gallery = models.ForeignKey(Gallery, null = True,verbose_name = _('gallery'),blank=True)
     video_url = models.CharField(max_length=130,verbose_name = _('video_url'),null=True,blank=True)
     pub = models.BooleanField(verbose_name = _('pub'))
     pub_order = models.SmallIntegerField(verbose_name = _('pub_order'),null=True,blank=True)
@@ -79,6 +96,15 @@ class News(models.Model):
     class Meta:
         verbose_name = _('news')
         verbose_name_plural = _('news')
+
+
+class HomepageVideo(models.Model):
+    src = models.TextField(verbose_name = _('source_link'),)
+    pub = models.BooleanField(verbose_name = _('pub'))
+
+    class Meta:
+        verbose_name = _('video homepage')
+        verbose_name_plural = _('video homepage')        
 
 
 

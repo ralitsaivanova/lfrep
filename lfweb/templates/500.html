@@ -1,6 +1,6 @@
 {% extends "lfweb/base.html"%}
 
-{% load staticfiles cms_tags menu_tags %}
+{% load staticfiles cms_tags menu_tags i18n %}
 
  {% block bodyclass %}  {% endblock bodyclass %}
 
@@ -19,11 +19,8 @@
     
     	<article>
         <div class="tex">
-        <p>La pagina che hai cercato non esiste.<br />
-Usa il men&ugrave; per navigare il sito</p>       
-
-        <p>This is not the page you were looking for.<br />
-Use the navigation men&ugrave; to browse.</p>       
+        <p>{% trans "error_page_msg" %}</p>           
+             
         </div>
         </article>
     </div>

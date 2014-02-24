@@ -1,6 +1,6 @@
 {% extends "lfweb/base.html"%}
 
-{% load staticfiles cms_tags menu_tags %}
+{% load staticfiles cms_tags menu_tags lfweb_tags %}
 
 
 {% block mediajq %}
@@ -8,7 +8,7 @@
 {% endblock mediajq %}        
 
 
- {% block bodyclass %} class="home" {% endblock bodyclass %}
+ {% block bodyclass %} class="home"  {% endblock bodyclass %}
  
      {% block breadcrums %} 
 	{% endblock breadcrums %}
@@ -20,11 +20,7 @@
     <!--startsVIEW-->
 
     	<section>
-		<div class="video">
-        	<div class="videoWrapper">
-                <iframe width="538" height="327" src="//www.youtube.com/embed/n_dZNLr2cME" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div> 
+		      {% homepage_video %}
         </section>   
     
     	{% show_menu 0 100 100 100 "lfweb/menu_home.html" %}

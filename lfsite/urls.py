@@ -18,7 +18,6 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rosetta/', include('rosetta.urls')),
-    url(r'^news/', lfweb_views.news),
     (r'^tinymce/', include('tinymce.urls')), 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,

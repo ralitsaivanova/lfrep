@@ -1,15 +1,35 @@
 {% extends "lfweb/base.html"%}
 
-{% load staticfiles cms_tags menu_tags %}
+{% load staticfiles cms_tags menu_tags i18n %}
 
- {% block bodyclass %} class="collezioni_det" {% endblock bodyclass %}
+ {% block bodyclass %}class="collezioni_det"  {% endblock bodyclass %}
 
+{% block breadcrums %} 
+
+<div id="breadcrums">
+    <div class="path">
+
+
+        <a href="/">Home</a> >
+       {% page_attribute "page_title" "idcashmere" %} >
+
+        <a href="{% page_url "idcollection" %}">{% page_attribute "page_title" "idcollection" %}</a> >
+      
+  
+        {{ collection.name|safe }}
+    
+
+
+    </div>
+</div>
+       
+{% endblock breadcrums %}
 
 
 {% block content %}
     <!--startsVIEW-->
     
-    <h1>{{collection.name}}</h1>
+    <h1>{{collection.name|safe}}</h1>
     
         {% block menu %} 
             {% show_menu 0 100 100 100 "lfweb/menu.html" %}    
@@ -21,16 +41,23 @@
             <div class="tex">
                 {{collection.description|safe}}
 
+                {% if collection.pittogramma %}
                 <div class="pittogram">
-                    <img src="{{collection.img.url}}" width="236" height="31" alt="lavaggi washings" />
+                    <img src="{{collection.pittogramma.url}}" width="{{collection.pittogramma.width}}" height="{{collection.pittogramma.url}}"  alt="{% trans 'pictogram' %} {{ collection.name|safe }}">
                 </div>
+                {% endif %}
           
           </div>
           
-          
-          <img src="{{collection.pittogramma.url}}" width="694" height="405" alt="scheda tecnica">
-         {% endifequal %}   
-          <h2>STOCK SERVICE</h2>
+          {% for tecnicalcard in tecnicalcards %}
+            <img src="{{tecnicalcard.img.url}}" width="{{tecnicalcard.img.width}}" height="{{tecnicalcard.img.height}}" alt="{{tecnicalcard.alttext}}" />
+          {% endfor %}
+
+         {% endifequal %} 
+
+         {% ifnotequal collection.id 6 %}  
+
+          <h2>{% trans "STOCK SERVICE" %}</h2>
             
             <div class="stock">
                 {% for yarn in yarns %} 
@@ -40,11 +67,11 @@
                     {% endif %}
 
 
-                        <img src="{{yarn.img.url}}" width="339" height="210" alt="filato1" />
+                        <img src="{{yarn.img.url}}" width="{{yarn.img.width}}" height="{{yarn.img.height}}" alt="{{yarn.name|safe}}" />
                         <h2>{{yarn.name|safe}}</h2>
 
                     {% if not forloop.last %}            
-                        {% if forloop.counter|divisibleby:"3" %}
+                        {% if forloop.counter|divisibleby:"4" %}
                             </div>
                             <div class="col">
                         {% endif %}
@@ -76,6 +103,8 @@
                 <a href="#" class="next off">Next <strong>&gt;</strong></a>
             {% endif %}	
         </div>
+
+        {% endifnotequal %}  
         
     </div>
     <!--endsVIEW-->
