@@ -2,7 +2,7 @@
 
 {% load staticfiles cms_tags menu_tags %}
 
- {% block bodyclass %} class="storia" {% endblock bodyclass %}
+ {% block bodyclass %} class="red" {% endblock bodyclass %}
 
 
 
@@ -12,16 +12,28 @@
     <h1>{% placeholder "titolo_1" %}</h1>
     
         {% block menu %} 
-            {% show_menu 0 100 100 100 "lfweb/menu.html" %} 
+            {% show_menu 0 100 100 100 "lfweb/menu.html" %}      
         {% endblock menu %}  
+
     
     <div class="page_content">
+    
         <article>
+        
+        <h2>{% placeholder "sottotitolo_1" %}</h2>
         <div class="tex">
-       	 {% placeholder "testo_1" %}
+        {% placeholder "testo_1" %}
         </div>
+        
+        <h2>{% placeholder "sottotitolo_2" %}</h2>
+        <div class="tex">
+        {% placeholder "testo_2" %}
+        </div>
+        
          {% placeholder "img_1" %}
         </article>
+        
+        
     </div>
     <!--endsVIEW-->
 {% endblock content %}

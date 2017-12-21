@@ -1,4 +1,4 @@
-{% extends "lfweb/modelli/base.html"%}
+{% extends "lfweb/base.html"%}
 
 {% load staticfiles cms_tags menu_tags %}
 
@@ -12,7 +12,7 @@
     <h1>Deboneair</h1>
     
         {% block menu %} 
-            {% include "modelli/menu.html" %}       
+           {% show_menu 0 100 100 100 "lfweb/menu.html" %}   
         {% endblock menu %}  
     
     <div class="page_content">

@@ -1,0 +1,113 @@
+{% extends "lfweb/base.html"%}
+
+{% load staticfiles cms_tags menu_tags lfweb_tags %}
+
+ {% block bodyclass %} class="{{request.current_page.id|background_class}}"  {% endblock bodyclass %}
+
+{% block mediajq %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&language=it"></script>
+{% endblock mediajq %}        
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>Sedi</h1>
+    
+        {% block menu %} 
+             {% show_menu 0 100 100 100 "lfweb/menu.html" %}
+        {% endblock menu %}  
+    
+    <div class="page_content">
+            
+        <article>
+        <div class="tex">
+            <!--Map-->
+            <div class="mapWrapper">
+                                <div id="map1" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
+        <h2>Hong Kong Main office</h2>
+            <p class="bloc1">
+                Tollegno 1900 USA Inc.<br />
+                1384 Broadway, 14th FL. Suite 1106 NY 10018 New York, USA<br />
+                tel +1 212 869 3555<br />
+                fax +1 212 921 8323
+            </p> 
+            <p class="bloc2">
+                Mr. Giacomo Paolillo giacomo.paolillo@lorafesta.com.cn<br />
+                                Ms. Angela Liu angela.liu@lorafesta.com.cn
+            </p> 
+        </div>
+        </article>
+        
+        <article>
+        <div class="tex">
+            <!--Map-->
+            <div class="mapWrapper">
+                                <div id="map2" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
+        <h2>Shanghai office</h2>
+            <p class="bloc1">
+                Tollegno 1900 USA Inc.<br />
+                1384 Broadway, 14th FL. Suite 1106 NY 10018 New York, USA<br />
+                tel +1 212 869 3555<br />
+                fax +1 212 921 8323
+            </p> 
+            <p class="bloc2">
+                Mr. Giacomo Paolillo giacomo.paolillo@lorafesta.com.cn<br />
+                                Ms. Angela Liu angela.liu@lorafesta.com.cn
+            </p> 
+        </div>
+        </article>
+        <article>
+        <div class="tex">
+            <!--Map-->
+            <div class="mapWrapper">
+                                <div id="map3" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
+        <h2>USA</h2>
+            <p class="bloc1">
+                Tollegno 1900 USA Inc.<br />
+                1384 Broadway, 14th FL. Suite 1106 NY 10018 New York, USA<br />
+                tel +1 212 869 3555<br />
+                fax +1 212 921 8323
+            </p> 
+            <p class="bloc2">
+                Mr. Giacomo Paolillo giacomo.paolillo@lorafesta.com.cn<br />
+                                Ms. Angela Liu angela.liu@lorafesta.com.cn
+            </p> 
+        </div>
+        </article>
+        <article>
+        <div class="tex">
+            <!--Map-->
+            <div class="mapWrapper">
+                                <div id="map4" style=" height:100%; width:100%;"></div>
+            </div>
+            <!--/Map-->
+        <h2>Japan</h2>
+            <p class="bloc1">
+                Tollegno 1900 USA Inc.<br />
+                1384 Broadway, 14th FL. Suite 1106 NY 10018 New York, USA<br />
+                tel +1 212 869 3555<br />
+                fax +1 212 921 8323
+            </p> 
+            <p class="bloc2">
+                Mr. Giacomo Paolillo giacomo.paolillo@lorafesta.com.cn<br />
+                                Ms. Angela Liu angela.liu@lorafesta.com.cn
+            </p> 
+        </div>
+        </article>
+        
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}
+
+
+{% block media %}
+<script src="{% static 'lfweb/js/sedi.js' %}" type="text/javascript"></script><!--realtivo alla page (potrebbe servire anche solo in home)-->
+{% endblock media %}

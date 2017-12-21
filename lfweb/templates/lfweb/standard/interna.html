@@ -1,8 +1,12 @@
 {% extends "lfweb/base.html"%}
 
-{% load staticfiles cms_tags menu_tags %}
+{% load staticfiles cms_tags menu_tags lfweb_tags thumbnail   %}
 
- {% block bodyclass %} class="storia" {% endblock bodyclass %}
+ {% block bodyclass %}
+    
+    class="{{request.current_page.id|background_class}}" 
+
+  {% endblock bodyclass %}
 
 
 
@@ -12,7 +16,7 @@
     <h1>{% placeholder "titolo_1" %}</h1>
     
         {% block menu %} 
-            {% show_menu 0 100 100 100 "lfweb/menu.html" %} 
+            {% show_menu 0 100 100 100 "lfweb/menu.html" %}      
         {% endblock menu %}  
     
     <div class="page_content">
@@ -20,7 +24,9 @@
         <div class="tex">
        	 {% placeholder "testo_1" %}
         </div>
-         {% placeholder "img_1" %}
+         {%  placeholder  "img_1" %}
+           
+
         </article>
     </div>
     <!--endsVIEW-->

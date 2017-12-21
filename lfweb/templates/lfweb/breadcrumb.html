@@ -1,0 +1,20 @@
+<div id="breadcrums">
+	<div class="path">
+{% for ance in ancestors %}
+
+ 	{% if not forloop.last %}
+ 		{% ifequal forloop.counter 2 %}
+ 		{{ ance.get_menu_title }} >
+ 		{% endifequal %}
+
+ 		{% ifnotequal forloop.counter 2  %}
+ 		<a href="{{ ance.get_absolute_url }}">{{ ance.get_menu_title }}</a> >
+ 		{% endifnotequal %}
+ 	{% else %}
+ 		{{ ance.get_menu_title }}
+ 	{% endif %}
+
+{% endfor %}
+	</div>
+</div>
+

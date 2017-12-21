@@ -1,0 +1,35 @@
+{% load menu_tags lfweb_tags staticfiles %}    
+
+<div class="menu_cont">
+{% for child in children %}
+     <section class="sezione" ref="{{ forloop.counter|mmenu_class }}">
+     {% if forloop.counter == 1 %}
+     <img src="{% static 'lfweb/img/bg-azienda.jpg' %}" width="480" height="465" alt="azienda" class="bg {{ forloop.counter|mmenu_class }}">
+     {% endif %}
+
+     {% if forloop.counter == 2 %}
+     <img src="{% static 'lfweb/img/bg-cashmere.jpg' %}" width="480" height="465" alt="azienda" class="bg {{ forloop.counter|mmenu_class }}">
+     {% endif %}
+
+     {% if forloop.counter == 3 %}
+     <img src="{% static 'lfweb/img/bg-qualita.jpg' %}" width="480" height="465" alt="azienda" class="bg {{ forloop.counter|mmenu_class }}">
+     {% endif %}
+
+     {% if forloop.counter == 4 %}
+     <img src="{% static 'lfweb/img/bg-contatti.jpg' %}" width="480" height="465" alt="azienda" class="bg {{ forloop.counter|mmenu_class }}">
+     {% endif %}
+
+       <h1 class="macrotit {{ forloop.counter|mmenu_class }}">{{ child.get_menu_title}}</h1>
+               <nav class="menu {{ forloop.counter|mmenu_class }}">
+                       <ul>
+                           {% if child.children %}
+                             {% for item in child.children %}
+                                <li><a href="{{item.get_absolute_url}}">{{item.get_menu_title}}</a></li>
+                             {% endfor %}
+                        {% endif %}
+                   </ul>
+               </nav>
+               <div class="wait"></div>
+           </section>
+{% endfor %}
+</div>

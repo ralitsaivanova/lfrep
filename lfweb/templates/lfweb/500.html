@@ -1,1 +1,31 @@
-<h1>Whoops!</h1>
+{% extends "lfweb/base.html"%}
+
+{% load staticfiles cms_tags menu_tags %}
+
+ {% block bodyclass %}  {% endblock bodyclass %}
+
+
+
+{% block content %}
+    <!--startsVIEW-->
+    
+    <h1>Page not found</h1>
+    
+        {% block menu %} 
+            {% show_menu 0 100 100 100 "lfweb/menu.html" %}       
+        {% endblock menu %}  
+    
+    <div class="page_content">
+    
+    	<article>
+        <div class="tex">
+        <p>La pagina che hai cercato non esiste.<br />
+Usa il men&ugrave; per navigare il sito</p>       
+
+        <p>This is not the page you were looking for.<br />
+Use the navigation men&ugrave; to browse.</p>       
+        </div>
+        </article>
+    </div>
+    <!--endsVIEW-->
+{% endblock content %}
