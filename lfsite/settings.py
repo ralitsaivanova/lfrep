@@ -14,29 +14,15 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'loradev01',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'lfwebdb',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
-
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ralka_lorafesta',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': 'ralka',
-        'PASSWORD': 'IwyawDW3',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
-}
-'''
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -50,7 +36,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'it'
+LANGUAGE_CODE = 'en-us'
 
 gettext = lambda s: s
 LANGUAGES = (
@@ -136,12 +122,13 @@ TEMPLATE_DIRS = (
 
 CMS_TEMPLATES = (
     ('lfweb/modelli/base.html', gettext('base')),
-    ('lfweb/standard/home.html', gettext('home')),
-    ('lfweb/standard/interna.html', gettext('interna')),
-    ('lfweb/standard/interna2.html', gettext('interna2')),
+    ('lfweb/modelli/home.html', gettext('home')),
+    ('lfweb/modelli/interna.html', gettext('interna')),
+    ('lfweb/modelli/interna2.html', gettext('interna2')),
+    ('lfweb/modelli/news.html', gettext('news')),
     ('lfweb/modelli/collezioni.html', gettext('collezioni')),
     ('lfweb/modelli/collezioni_det.html', gettext('collezioni_det')),
-    ('lfweb/standard/sedi.html', gettext('sedi')),
+    ('lfweb/modelli/sedi.html', gettext('sedi')),
     ('lfweb/404.html', gettext('404')),
 )
 
@@ -166,6 +153,11 @@ ROOT_URLCONF = 'lfsite.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'lfsite.wsgi.application'
 
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
 
 DJANGO_APPS = (
     # Default Django apps:
@@ -195,7 +187,6 @@ THIRD_PARTY_APPS = (
     'cms.plugins.snippet',
     'cms.plugins.googlemap',
     'cms.plugins.picture',
-    
     #'cms.plugins.flash',
     'mptt', 
     'menus', 
@@ -203,25 +194,23 @@ THIRD_PARTY_APPS = (
     'django.contrib.messages',
     'rosetta',
     'tinymce',
-    'easy_thumbnails',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'lfweb',
-    'news',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-TINYMCE_DEFAULT_CONFIG = {
-'theme': "advanced",
-'theme_advanced_toolbar_location' : "top",
-'theme_advanced_buttons1': "bold,italic,underline,separator,bullist,separator,outdent,indent,separator,undo,redo",
-'theme_advanced_buttons2': "code,link",
-'theme_advanced_buttons3': "",
- 'theme_advanced_resizing': True,
-    'element_format': "html",
+
+CMS_PLACEHOLDER_CONF = {
+    'content': {
+        'plugins': ['TextPlugin', 'PicturePlugin'],
+        'text_only_plugins': ['LinkPlugin'],
+        'extra_context': {"width":640},
+        'name':gettext("Content"),
+    },
 }
 
 CMS_MEDIA_PATH = "/cms"
@@ -258,4 +247,3 @@ LOGGING = {
         },
     }
 }
-

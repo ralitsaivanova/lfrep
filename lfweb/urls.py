@@ -4,6 +4,5 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('lfweb.views',
-    url(r'^(?P<slug>.+)', "detail",name = "detail"),
-    url(r'^', "collections",name = "collections"),
+    url(r'^/', "news",name = "news"),
 )
