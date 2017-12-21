@@ -1,4 +1,4 @@
-{% extends "lfweb/base.html"%}
+{% extends "lfweb/modelli/base.html"%}
 
 {% load staticfiles cms_tags menu_tags %}
 
@@ -12,7 +12,7 @@
     <h1>{% placeholder "titolo_1" %}</h1>
     
         {% block menu %} 
-            {% show_menu 0 100 100 100 "lfweb/menu.html" %} 
+            {% include "lfweb/modelli/menu.html" %}       
         {% endblock menu %}  
     
     <div class="page_content">
